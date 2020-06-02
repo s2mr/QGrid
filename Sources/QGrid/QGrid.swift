@@ -103,7 +103,7 @@ public struct QGrid<Data, Content>: View
   public var body : some View {
     GeometryReader { geometry in
       Group {
-        if self.isScrollable {
+        if self.isScrollable && !self.data.isEmpty {
           ScrollView(showsIndicators: self.showScrollIndicators) {
             self.content(using: geometry)
           }
